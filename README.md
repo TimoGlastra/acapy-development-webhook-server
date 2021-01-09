@@ -1,13 +1,13 @@
 # ACA-Py Development Webhook Server
 
-An easy-to-use webhook server to use for ACA-Py development. It will listen for request and visualizes them in a dashboard.
+An easy-to-use webhook server to use for ACA-Py development. It will listen for requests and visualizes them in a dashboard.
 
 Uses [MockServer](https://mock-server.com) under the hood.
 
 ## Usage
 
 ```sh
-docker run -p 1080:1080 ghcr.io/TimoGlastra/acapy-development-webhook-server
+docker run -p 1080:1080 ghcr.io/timoglastra/acapy-development-webhook-server
 ```
 
 Then point the `--webhook-url` to the docker container.
@@ -43,7 +43,7 @@ services:
     entrypoint: aca-py start ... --webhook-url http://webhook-server:1080
 
   webhook-server:
-    image: ghcr.io/TimoGlastra/acapy-development-webhook-server
+    image: ghcr.io/timoglastra/acapy-development-webhook-server
     ports:
       - 1080:1080
 ```

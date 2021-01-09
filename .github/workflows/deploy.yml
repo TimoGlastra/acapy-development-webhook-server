@@ -1,0 +1,18 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    name: Publish image
+    runs-on: ubuntu-18.04
+      - uses: actions/checkout@v2
+      - name: Publish docker image
+        run: |
+          echo ${{ secrets.CR_PAT }} | docker login ghcr.io --username TimoGlastra --password-stdin
+          docker build -t acapy-development-webhook-server:latest .
+          docker tag acapy-development-webhook-server:latest ghcr.io/${GITHUB_REPOSITORY}:latest
+          docker push ghcr.io/${GITHUB_REPOSITORY}:latest

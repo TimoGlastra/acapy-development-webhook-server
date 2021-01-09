@@ -47,3 +47,7 @@ services:
     ports:
       - 1080:1080
 ```
+
+## Preview
+
+![MockServer Preview](./assets/mockserver-preview.png)

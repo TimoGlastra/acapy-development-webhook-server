@@ -1,0 +1,30 @@
+[
+  {
+    "httpRequest": {
+      "path": "/topic/{topic}",
+      "pathParameters": {
+        "topic": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9-]+$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/"
+    },
+    "httpOverrideForwardedRequest": {
+      "httpRequest": {
+        "path": "/mockserver/dashboard"
+      }
+    }
+  }
+]

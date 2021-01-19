@@ -16,6 +16,16 @@ Then point the `--webhook-url` to the docker container.
 aries_cloudagent start ... --webhook-url http://localhost:1080
 ```
 
+You can optionally add an extra path to distinguish between different agents:
+
+```sh
+# You can detect agent1 webhook events by the /agent1 path
+aries_cloudagent start ... --webhook-url http://localhost:1080/agent1
+
+# Same for agent2 webhook events by the /agent2 path
+aries_cloudagent start ... --webhook-url http://localhost:1080/agent2
+```
+
 ### ACA-Py inside docker
 
 If you run ACA-Py in a docker container (e.g. using the `./scripts/run_docker` script in the ACA-Py repo) you need to use the docker host instead of localhost. Beware that you need to use the internal docker port now, so if you changed the `-p 1080:1080` to something else (like `-p 3000:1080`) you still need to use `1080` when running ACA-Py inside docker

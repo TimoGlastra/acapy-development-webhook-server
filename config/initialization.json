@@ -19,6 +19,32 @@
   },
   {
     "httpRequest": {
+      "path": "{agentName}/topic/{topic}",
+      "pathParameters": {
+        "topic": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9-_]+$"
+            }
+          }
+        ],
+        "agentName": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9-_]+$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200
+    }
+  },
+  {
+    "httpRequest": {
       "path": "/"
     },
     "httpOverrideForwardedRequest": {
